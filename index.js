@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express=require('express')
 const app=express()
 const db=require('./src/config/db')
@@ -9,6 +10,11 @@ app.use(express.urlencoded({extended:true}))
 app.use(cookieParser())
 app.use("/apis",apiroutes)
 app.use("/api/artist",artistroutes)
+
+//test api
+app.get("/",(req,res)=>{
+    res.status(200).json({message:"Server is online"})
+})
 
 app.listen(3000,(err)=>{
     if(err!=null){

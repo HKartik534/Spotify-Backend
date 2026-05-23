@@ -1,6 +1,6 @@
 const userModel = require("./userModel")
 const jwt = require('jsonwebtoken')
-const key = "123@#123"
+const key = process.env.JWTKEY
 const bcrypt=require('bcrypt')
 const salt=10
 

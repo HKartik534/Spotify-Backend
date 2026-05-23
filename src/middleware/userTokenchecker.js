@@ -1,5 +1,5 @@
 const jwt=require('jsonwebtoken')
-const key="123@#123"
+const key=process.env.JWTKEY
 
 module.exports=(req,res,next)=>{
     const token=req.cookies.token
